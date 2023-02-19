@@ -1,7 +1,7 @@
 {
   "name": "xp-framework/jit",
   "type": "composer-plugin",
-  "license": "BSD",
+  "license": "BSD-3-Clause",
   "autoload": {
     "psr-4": {"XP\\Compiler\\": "src"}
   },
