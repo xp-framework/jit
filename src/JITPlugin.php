@@ -76,7 +76,6 @@ final class JITPlugin implements PluginInterface, EventSubscriberInterface
     file_put_contents($vendor.DIRECTORY_SEPARATOR.self::JIT, $code);
 
     // Add bootstrap to this package's autoloader
-    $autoload = $package->getAutoload();
     $jit = basename($vendor).'/'.self::JIT;
     if (isset($autoload['files'])) {
       $autoload['files'][] = $jit;
