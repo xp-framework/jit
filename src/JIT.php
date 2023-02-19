@@ -48,8 +48,7 @@ class JIT
       $source = $source.DIRECTORY_SEPARATOR.$fname.'.php';
       $target = $this->target.DIRECTORY_SEPARATOR.crc32(dirname($fname)).'-'.basename($fname).'.php';
 
-      $m = filemtime($target);
-      if (false === $m || $m < filemtime($source)) {
+      if (!is_file($target) || filemtime($target) < filemtime($source)) {
         $this->compile(new File($source), new File($target));
       }
 
